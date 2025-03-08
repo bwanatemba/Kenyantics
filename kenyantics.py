@@ -7,6 +7,10 @@ app = FastAPI(title="Kenyantics", description="A collection of humorous African-
 def root():
     return {"message": "Welcome to Kenyantics API! Visit /docs for API documentation."}
 
+@app.get("/docs", include_in_schema=False)
+def custom_docs():
+    return RedirectResponse(url="https://www.postman.com/worldwidetemba/kenyantics/collection/0yy2ztx/kenyantics-api?action=share&creator=20188100")
+
 # 1. Mama Mboga Price Forecast API
 @app.get("/mama-mboga-price")
 def get_mama_mboga_price():
