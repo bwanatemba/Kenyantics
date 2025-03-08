@@ -3,6 +3,10 @@ import random
 
 app = FastAPI(title="Kenyantics", description="A collection of humorous African-themed APIs", version="1.0")
 
+@app.get("/")
+def root():
+    return {"message": "Welcome to Kenyantics API! Visit /docs for API documentation."}
+
 # 1. Mama Mboga Price Forecast API
 @app.get("/mama-mboga-price")
 def get_mama_mboga_price():
